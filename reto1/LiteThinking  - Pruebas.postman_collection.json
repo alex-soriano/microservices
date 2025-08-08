@@ -49,12 +49,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{host}}/2",
+					"raw": "{{host}}/3",
 					"host": [
 						"{{host}}"
 					],
 					"path": [
-						"2"
+						"3"
 					]
 				}
 			},
@@ -84,7 +84,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "    {\r\n        \"name\" : \"test2\",\r\n        \"price\" : \"15.50\",\r\n        \"quantity\" : \"10\"\r\n    } ",
+					"raw": "    {\r\n        \"name\" : \"test2\",\r\n        \"price\" : \"155.50\",\r\n        \"quantity\" : \"10\"\r\n    } ",
 					"options": {
 						"raw": {
 							"language": "json"
