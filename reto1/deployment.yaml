@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-microservice
+  namespace: default
+  labels:
+    app: demo-microservice
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: demo-microservice
+  template:
+    metadata:
+      labels:
+        app: demo-microservice
+    spec:
+      containers:
+      - name: demo-microservice
+        image: alexcontainerregistry2.azurecr.io/demo-microservice:1.0
+        ports:
+        - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: demo-microservice
+  namespace: default
+spec:
+  selector:
+    app: demo-microservice
+  ports:
+  - protocol: TCP
+    port: 8080
+    targetPort: 8080
+  type: LoadBalancer
